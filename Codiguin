@@ -1,0 +1,18 @@
+import'package;flutter/material.dart';
+class pagnaprincipal extends statefulwidget [
+   const PaginaPrincipal[super.key]
+   @override
+   StaticRange paginaprincipal creat state ()= pagimaprincipalstate();
+]
+
+class paginaprincipalSTATE EXTEND STATE paginaprincipal {
+  OverRID 
+  WILDGET Build(BuildContext context)  {
+   [return Scaffold] 
+   appBar; appBar
+   title; Text (Kenay Store)
+   
+   )
+
+    
+]
