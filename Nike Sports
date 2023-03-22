@@ -1,0 +1,119 @@
+import 'package:flutter/material.dart';
+
+class PaginaPrincipal extends StatefulWidget {
+  const PaginaPrincipal({super.key});
+
+  @override
+  State<PaginaPrincipal> createState() => _PaginaPrincipalState();
+}
+
+class _PaginaPrincipalState extends State<PaginaPrincipal> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text ('NikeSports'),  //aqui  vai o nome do app de vcs...
+        centerTitle: true,
+        backgroundColor: Color.fromARGB(75, 85, 86 , 0),
+      ),
+     
+      body: Padding(
+        padding: const EdgeInsets.all(50.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          TextFormField(
+            decoration:InputDecoration(
+              icon: Icon(Icons.account_circle),
+              hintText: 'digite seu email',
+              labelText: 'Email',
+            ) 
+          ),
+          TextFormField(
+          decoration: InputDecoration(
+            icon:Icon(Icons.key),
+            hintText:'digite sua senha',
+            labelText: 'Senha'),
+            obscureText:true,
+      
+          ),
+          Container(
+            width: 100,
+            margin: EdgeInsets.all(9),  //AQUI É A LARGURA DA BORDA  SUPERIOR DO BOTÃO E DO FORMULÁRIO  DE LOGIN
+            child: ElevatedButton(onPressed:(){},child: Text('Entrar')))
+      
+          ],
+          ),
+      )
+        );
+  }
+}
+
+/*void main() {
+  runApp(const MaterialApp(
+    title: 'NOME DO APP', //COLOCA O MESMO NOME DO APP DE VCS
+    home: PaginaPrincipal(),
+  ));
+
+}*/
+
+class ListadeCompras extends StatefulWidget {
+
+  const ListadeCompras({super.key});
+
+  @override
+  State<ListadeCompras> createState() => _ListadeComprasState();
+}
+
+// Aqui é onde inserimos novos produtos colocando Nome e Preço.
+class _ListadeComprasState extends State<ListadeCompras> {
+List<Produto> ListaDeProdutos = [ 
+Produto("Regata esportiva Cinza", 75.0 ,"images/arroz.jpg"),
+Produto("Tênis esportivo Preto", 225.0,"images/feijao.jpg"),
+Produto("Moletom Nike Preto", 110.0,"images/carne.jpg"),
+Produto("Blusa esportiva Azul", 40.0,"images/batata.jpg"),
+Produto("Calça legging Preta", 50.0,"images/bone.jpg"),
+Produto("Camisa futebol Psg", 215.0,"images/bone.jpg"),
+
+];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('LISTA DE COMPRAS'),
+        centerTitle: true,
+         backgroundColor: Color.fromARGB(75, 85, 86 , 0),
+      ),
+      body:  ListView.builder(
+        itemCount: ListaDeProdutos.length,
+        itemBuilder:(context, index) {
+          return ListTile(
+            leading:Image.asset(ListaDeProdutos[index].imagem),
+          title: Text(ListaDeProdutos[index].nome),
+          subtitle: Text("R\$ ${ListaDeProdutos[index].preco.toString()}0"),
+          );
+        },
+      ),
+    );
+  }
+}
+
+//formato dos produtos
+class Produto{
+  String nome = "";
+  double preco =0.0;
+  String imagem ="";
+
+  Produto(String _nome, double _preco, String _imagem){
+    nome= _nome;
+    preco= _preco;
+    imagem=_imagem;
+  }
+}
+
+
+void main() {
+  runApp(const MaterialApp(title: 'NikeStarts', home: ListadeCompras()));
+}
