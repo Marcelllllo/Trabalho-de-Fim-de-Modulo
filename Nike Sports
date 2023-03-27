@@ -117,3 +117,65 @@ class Produto{
 void main() {
   runApp(const MaterialApp(title: 'NikeStarts', home: ListadeCompras()));
 }
+
+return Card(
+    child: ListTile(
+        leading: Image.asset(ListaDeProdutos[index].imagem),
+        title: Text(ListadeCompras[index].nome),
+        subtitle:
+          Text('R/$${ListaDeProdutos[index].preco.toString()}0'),
+    )
+)
+
+return Card
+child: ListTile(
+    leading:Image.asset(listaDeProdutos[index].imagem),
+    title: Text(ListaDeProdutos[index].nome),
+    subtitle:
+    Text("R\$ ${ListaDeProdutos[index].preco.toString()}O"),
+    trainling: ElevatedButton(onPressed: (){}, child:Text('Comprar')),
+ ),
+);
+return Scaffold(
+    floatingActionButton: FloatingActionButton(
+        onPressed:(){},
+        child:Icon(Icons.shopping_cart),
+    ),
+    bottomSheet:SizedBox(
+        child:Container(
+            child:Text('Preço total:'),
+        ),
+    ),
+    bottomSheet: SizedBox(
+        heigth: 50,
+        child: Container(
+            backgroundColor: Color.fromARGB(75, 85, 86 , 0),
+            child: Text('Preço Total:'),
+        ),
+    )
+    bottomSheet: SizedBox(
+        heigth: 50,
+        child: Container(
+            backgroundColor: Color.fromARGB(75, 85, 86 , 0),
+            child: Row(
+                children:[
+                    Text('Preço total:'),
+                ],
+            ),
+        ),
+    ),
+    bottomSheet: SizedBox(
+        heigth: 50,
+        child:Container(
+            backgroundColor: Color.fromARGB(75, 85, 86 , 0),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children:[
+                    Text(
+                        'Preço total: R/$',
+                        style: TextStyle(colors.white, fontSize: 24),
+                    ),
+                ],
+            ),
+        ),
+    ),
